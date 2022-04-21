@@ -1,28 +1,71 @@
-<template>
+<template v-slot:title>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <zhz-button plain @click="showDiadlog">点击打开dialog</zhz-button>
+    <!-- <zhz-button type="primary" plain disabled>primary按钮</zhz-button>
+    <zhz-button type="success" plain disabled>success按钮</zhz-button>
+    <zhz-button type="info" round disabled>info按钮</zhz-button>
+    <zhz-button type="danger" plain >danger按钮</zhz-button>
+    <zhz-button type="warning" >warning按钮</zhz-button> -->
+    <zhz-dialog width="80%" top="300px" :visible.sync="visible" modal>
+      <template v-slot:title>
+        <h4>我是标题</h4>
+      </template>
+
+      <div>主要内容</div>
+
+      <template v-slot:footer>
+        <zhz-button @click="handleClose">取消</zhz-button>
+        <zhz-button type="primary" @click="handleClose">确定</zhz-button>
+      </template>
+
+    </zhz-dialog>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ZhzDialog from './components/dialog/zhz-dialog.vue'
+import ZhzButton from './components/button/zhz-button.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ZhzDialog,
+    ZhzButton
+    
+  },
+  data() {
+    return {
+      visible:false,
+      modal:true, //是否需要遮罩
+    }
+  },
+  mounted() {
+    console.log("父组件的visible",this.visible)
+  },
+
+  methods:{
+    getInfo() {
+      
+    },
+    handleClose() {
+      this.visible = false;
+      
+    },
+    showDiadlog() {
+      this.visible = true;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app > button{
+  margin-right: 10px;
+  margin-top: 10px;
+  
+}
+.my-button:first-child{
+  margin-right: 20px;
 }
 </style>

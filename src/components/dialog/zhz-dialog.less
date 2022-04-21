@@ -1,0 +1,75 @@
+.my-dialog_wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+  z-index: 2001;
+  .my-dialog{
+    position: relative;
+    margin: 15vh auto 50px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    width: 30%;
+    &_header{
+      padding: 0 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .my-dialog_title{
+        line-height: 24px;
+        font-size: 18px;
+        color: #303133;
+      }
+      .my-dialog_close{
+        position: absolute;
+        // top: 20px;
+        right: 20px;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        background-image:url('../../assets//取消.png') ;
+        background-position: center;
+        background-size: 22px 22px;
+        background-repeat: no-repeat;
+      }
+    }
+    &_content{
+      padding: 30px 20px;
+      color: #606266;
+      font-size: 14px;
+      word-break: break-all;
+    }
+    &_footer{
+      padding: 10px 20px 20px;
+      text-align: right;
+      box-sizing: border-box;
+
+    }
+  }
+}
+
+.mask{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.dialog-fade-enter-active{
+  animation: fade .3s;
+}
+.dialog-fade-leave-active{
+  animation: fade .3s reverse;
+}
+@keyframes fade{
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
