@@ -25,13 +25,16 @@
       placeholder="请输入密码"
       v-model="value"
      ></zhz-input>
+
+     <zhz-switch></zhz-switch>
   </div>
 </template>
 
 <script>
-import ZhzDialog from './components/dialog/zhz-dialog.vue'
-import ZhzButton from './components/button/zhz-button.vue'
-import ZhzInput from './components/input/zhz-input.vue'
+import ZhzDialog from './components/dialog/zhz-dialog.vue';
+import ZhzButton from './components/button/zhz-button.vue';
+import ZhzInput from './components/input/zhz-input.vue';
+import ZhzSwitch from './components/switch/index.vue';
 
 
 export default {
@@ -39,7 +42,8 @@ export default {
   components: {
     ZhzDialog,
     ZhzButton,
-    ZhzInput
+    ZhzInput,
+    ZhzSwitch,
     
   },
   data() {
