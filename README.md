@@ -1,5 +1,3 @@
-# vue-button
-
 ## Project setup
 ```
 npm install
