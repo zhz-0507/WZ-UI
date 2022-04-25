@@ -22,8 +22,8 @@
     </zhz-dialog>
 
     <zhz-input 
-      :disabled=true
       placeholder="请输入密码"
+      v-model="value"
      ></zhz-input>
   </div>
 </template>
@@ -46,6 +46,7 @@ export default {
     return {
       visible:false,
       modal:true, //是否需要遮罩
+      value:""
     }
   },
   mounted() {

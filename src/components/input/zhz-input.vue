@@ -7,6 +7,8 @@
       :type="type"
       :name="name"
       :disabled="disabled"
+      :value="value"
+      @input="handleInput"
     >
   </div>
 </template>
@@ -36,11 +38,19 @@ export default {
       type:Boolean,
       default:false,
     },
+    value:{
+      default:""
+    }
   },
 
   methods:{
     handleClose () {
       this.$emit('update:visible', false)
+    },
+
+    handleInput(e) {
+      console.log(e.target.value)
+      this.$emit('input',e.target.value)
     }
   }
 }
