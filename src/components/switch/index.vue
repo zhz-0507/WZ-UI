@@ -1,5 +1,5 @@
 <template>
-  <div class="my-switch">
+  <div class="my-switch" :class="{'is-checked' : value}" @click="handleClick">
     <span class="my-switch_core">
       <span class="my-switch_button"></span>
     </span>
@@ -13,13 +13,23 @@
 <script>
   export default {
     name:'ZhzSwitch',
-    data () {
-      return {
-
+    props:{
+      value:{
+        type:Boolean,
+        default:false,
       }
     },
-    components: {
-
+    data () {
+      return {
+        
+      }
+    },
+    methods:{
+      handleClick() {
+        console.log('----',this.value)
+        this.$emit('input', !this.value)
+      }
+     
     }
   }
 </script>

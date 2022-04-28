@@ -31,3 +31,10 @@
   height: 16px;
   background-color: #fff;
 }
+.is-checked .my-switch_core {
+  border-color: #409eff;
+  background-color: #409eff;
+}
+.is-checked .my-switch_core .my-switch_button {
+  transform: translateX(20px);
+}

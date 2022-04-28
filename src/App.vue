@@ -26,7 +26,7 @@
       v-model="value"
      ></zhz-input>
 
-     <zhz-switch></zhz-switch>
+     <zhz-switch v-model="active" @input="updateSwitch"></zhz-switch>
   </div>
 </template>
 
@@ -50,11 +50,12 @@ export default {
     return {
       visible:false,
       modal:true, //是否需要遮罩
-      value:""
+      value:"",
+      active:true
     }
   },
   mounted() {
-    console.log("父组件的visible",this.visible)
+  
   },
 
   methods:{
@@ -67,7 +68,13 @@ export default {
     },
     showDiadlog() {
       this.visible = true;
+    },
+
+    updateSwitch(val) {
+      console.log('父组件',val)
+      this.active = val
     }
+
   }
 }
 </script>
