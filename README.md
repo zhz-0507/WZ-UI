@@ -1,5 +1,7 @@
 ## Project setup
 ```
+<!-- Vue组件封装练手 -->
+
 npm install
 ```
 
